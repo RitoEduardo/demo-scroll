@@ -200,6 +200,9 @@ export class DataService {
           gender
           origin{
             name
+            type
+            dimension
+            created
           }
           image
           episode{
@@ -211,7 +214,11 @@ export class DataService {
           }
           image
           location{
+            id
             name
+            type
+            dimension
+            created
           }
         }
       }

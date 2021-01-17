@@ -13,7 +13,7 @@
     <ion-label class="ion-text-wrap" style="padding-left: 1em;">
       <h2>
         {{ character.name }}
-        <span class="date">
+        <span class="date" style="float: right;">
           <ion-note>{{ character.gender }}</ion-note>
         </span>
       </h2>
@@ -31,10 +31,46 @@
     </div>
   </ion-item>
 
+  <ion-list>
+    
+    <ion-item>
+      <ion-icon slot="start" name="pulse-outline"></ion-icon>
+      <ion-label>
+        {{ character.status }}
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="accessibility-outline"></ion-icon>
+      <ion-label>
+        {{ character.species }}
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon  slot="start" name="planet-outline"></ion-icon>
+      <ion-label>
+        {{ character.origin.type }} - {{ character.origin.name }}
+      </ion-label>
+    </ion-item>
+
+    
+    <ion-item>
+      <ion-icon slot="start" name="navigate-circle-outline"></ion-icon>
+      <ion-label>
+        {{ character.origin.dimension }}
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+  
   <br>
   
-  <ion-chip *ngFor="let item of character.episode">
-    <ion-label> {{ item.episode }} </ion-label>
-  </ion-chip>
+  <div style="margin-left: 1.5em;">
+    <ion-chip *ngFor="let item of character.episode">
+      <ion-label> {{ item.episode }} </ion-label>
+    </ion-chip>
+  </div>
+  
 
 </ion-content>
