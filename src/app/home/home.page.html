@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Inbox
+  <ion-toolbar color="dark">
+    <ion-title style="text-align: center;">
+      Rick and Morty App
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,15 +11,23 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   
-  <ion-header collapse="condense">
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
         Inbox
       </ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
   
   <ion-list>
-    <app-message *ngFor="let message of getMessages()" [message]="message"></app-message>
+    <!-- <app-message *ngFor="let message of getMessages()" [message]="message"></app-message> -->
+    <app-card *ngFor="let character of characteres" [character]="character"></app-card>
   </ion-list>
+
+  <ion-infinite-scroll threshold="150px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

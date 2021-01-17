@@ -5,11 +5,12 @@ import { RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MessageComponent } from './message.component';
+import { CardComponent } from './card.component';
 
 @NgModule({
   imports: [ CommonModule, FormsModule, IonicModule, RouterModule],
-  declarations: [MessageComponent],
-  exports: [MessageComponent]
+  declarations: [CardComponent],
+  exports: [CardComponent]
 })
-export class MessageComponentModule {}
+export class CardModuleComponent {}
+

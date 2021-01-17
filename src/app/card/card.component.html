@@ -1,0 +1,24 @@
+<ion-card *ngIf="character">
+  <ion-item [routerLink]="'/character/' + character.id " [detail]="false" lines="none">
+    <ion-thumbnail slot="start">
+      <ion-img [src]="character.image"></ion-img>
+    </ion-thumbnail>
+    <div slot="start" 
+      class="dot"
+      [ngClass]="{'dot-live': character.status ==='Alive','dot-dead': character.status ==='Dead'}"
+    ></div>
+    <ion-card-header>
+      <ion-card-title>  {{ character.name }} </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label class="ion-text-wrap">
+        <strong>
+          Location
+        </strong>
+      </ion-label>
+      <ion-label class="ion-text-wrap">
+        <h3>{{ character.location.name }}</h3>
+      </ion-label>
+    </ion-card-content>
+  </ion-item>  
+</ion-card>
